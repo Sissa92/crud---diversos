@@ -1,0 +1,128 @@
+body{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3f2f2+0,ffffff+100 */
+background: #f3f2f2; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #f3f2f2 0%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #f3f2f2 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #f3f2f2 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f2f2', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+border-top: solid 10px #FF9130;
+}
+
+@media (min-width: 768px){
+    .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+
+    .navbar-default{
+    	margin-top: 30px;
+    	background: none;
+    	border: 0px;
+    }
+}
+
+.navbar-default .navbar-nav>li>a{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 1.4em;
+}
+
+	.navbar-default .navbar-nav>li>a:link{
+		color: #204260;
+	}
+
+	.navbar-default .navbar-nav>li>a:visited{
+		color: #204260;
+	}
+
+	.navbar-default .navbar-nav>li>a:hover{
+		color: #FF9130;
+	}	
+
+
+@media (max-width: 768px){
+	.home img{
+		padding-top: 100px;
+	}
+
+	.home h6{
+		margin-top: 50x;
+	}
+}
+
+@media (min-width: 768px){
+	.home img{
+		padding-top: 200px;
+	}	
+
+	.home h6{
+		margin-top: 100px;
+	}
+}
+
+.home{
+	text-align: center;
+	color: #204260;
+	min-height: 90vh;
+}
+
+	.home img{
+		margin: 0 auto;
+	}
+
+	.home p{
+		margin-top: 50px;
+	}
+
+
+h1, h2, h3{
+	font-family: 'Permanent Marker', cursive;
+}
+
+.titulo-pagina{
+	text-align: center;
+	margin-top: 50px;
+	color: #204260;
+	margin-bottom: 30px;
+}
+
+.esquerda{
+	min-height: 90vh;
+	background: url('../img/fundo-esquerda.png') right top repeat-y;
+	background-size: cover;
+}
+
+.direita{
+	min-height: 90vh;
+	background: url('../img/fundo-esquerda.png') left  top repeat-y;
+	background-size: cover;	
+}
+
+
+.topo{
+	padding-top: 20px;
+}
+
+.topo-logo{
+	text-align: right;
+}
+
+	.topo-logo img{
+
+	}
+
+.topo-data-local{
+	text-align: left;
+}
+
+.item-palestrante{
+	text-align: center;
+	margin-bottom: 40px;
+	min-height: 500px;
+}
+
+.item-palestrante img{
+	margin: 0 auto;
+	width: 80%;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pt-br">
+<head>
+	<title>FINANCEIRO</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="script/ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="script/bootstrap/css/bootstrap.min.css">
+
+	<script src="myscript.js"></script>
+</head>
+<body>
+	<!--<form id="frmPrestContas" name="frmPrestContas" method="post" action="grava.asp" target="_blank">-->
+	<div class="card" style="margin-left: 100px;margin-right: 100px; margin-bottom: 10px;margin-top: 20px">
+	<div class="card-header text-info" style="text-align: center;">RELATÓRIO DE PRESTAÇÃO DE CONTAS</div>
+		<div class="card-body">
+			<div class="alert alert-info p-1" role="alert">
+				<div style="width:200px; margin:0 auto">
+					<label class="text-info" style=" text-align: center;">Funcionário Solicitante</label>
+				</div>
+			</div>
+			<div class="form-row">
+					<div class="form-group col-md-2">
+						<label for="txtCPF" class="text-muted" style="color: #080808;"><small>Matricula</small></label>
+						<input type="text" name="txtMat" id="txtMat" class="form-control form-control-sm"/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="txtNome" class="text-muted" style="color: #080808;"><small>Nome</small></label>
+						<input type="text" name="txtNome" id="txtNome" class="form-control form-control-sm" />
+					</div>
+					<div class="form-group col-md-4">
+						<label for="txtCargo" class="text-muted" style="color: #080808;"><small>Cargo</small></label>
+						<input type="text" name="txtCargo" id="txtCargo" class="form-control form-control-sm"/>
+					</div>
+				</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label class="text-muted" style="color: #080808;"><small>Departamento</small></label>
+					<input type="hidden" name="cmbDep" value="S">
+					<select class="form-control form-control-sm" id="dep" name="dep"><small></small>
+						<option value="" selected="selected">Escolha uma Opção</option>
+						<option value="1">DIRETORIA</option>
+						<option value="2">RECURSOS HUMANOS - RH</option>
+						<option value="3">DIVISÃO DE TECNOLOGIA</option>
+						<option value="4">COMERCIAL</option>
+						<option value="5">FINANCEIRO</option>
+						<option value="6">ATENDIMENTO</option>
+						<option value="7">SERVIÇOS GERAIS</option>
+						<option value="8">DIVISÃO DE PORTARIA E TRANSPORTES</option>
+					</select>
+				</div>
+			</div>
+		<!--<div class="form-row">
+				<div class="form-group col-md-12">
+					<div class="alert alert-info p-1" role="alert">
+						<div style="width:200px; margin:0 auto">
+							<label class="text-info" style=" text-align: center;">Dados Adicionais</label>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<div>
+						<label for="" class="text-muted" style="color: #080808;"><small>Devolução do valor integral?</small></label>
+						<input type="radio" name="optResp" id="optRespSim" value="S" /> 
+						<label for="optRespSim" class="radio-inline text-muted small" style="color: #080808;">Sim</label>
+						<input type="radio" name="optResp" id="optRespNao" value="N" checked />
+						<label for="optRespNao" class="radio-inline text-muted small" style="color: #080808;"> Não</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12 text-center">
+					<table id="tb_carga_horaria" class="table table-sm table-bordered" style="width:800px">
+						<thead class="small bg-info text-light" style="opacity: 0.75">
+							<tr>
+								<th colspan="8" class="text-center py-1">DESPESAS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="small bg-info text-light" style="opacity: 0.50">
+								<td class="text-center"><input type="checkbox" id="chkTodos" style="margin-top: 3px;" /></td>
+								<td class="text-center" >Data</td>
+								<td class="text-center">Hospedagem</td>
+								<td class="text-center">Alimentação</td>
+								<td class="text-center">Transporte</td>
+								<td class="text-center">Total Diario</td>
+								<td class="text-center">Acões</td>
+							</tr>
+							<tbody>
+								<tr id="linha_1">
+									<td align="center">
+										<input type="checkbox" id="chkApagar_1" style="margin-top: 10px;">
+									</td>
+									<td align="center">
+										<input type="text" name="txtData" id="txtData" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td align="center" style="padding: 3px;">
+										<input type="text" name="txtHosp" id="txtHosp" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td align="center">
+										<input type="text" name="txtAlim" id="txtAlim" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td align="center" style="padding: 3px;">
+										<input type="text" name="txtTransp" id="txtTransp" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td align="center" style="padding: 3px;">
+										<input type="text" name="txtTotDia" id="txtTotDia" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td class="text-center border-left px-0">
+										<button class="btn btn-sm btn-success" onclick="redirect('')">
+											<span class="ion-edit"></span>
+										</button>
+										<button class="btn btn-sm btn-danger" onclick="redirect('')">
+											<span class="ion-close"></span>
+										</button>
+								</tr>
+							</tbody>
+							<tr>
+								<td colspan="10" align="center">
+									<label class="text-muted mb-1"><small>Total das Despesas</small></label>
+									<input type="text" id="tot_aulas_imp" name="tot_aulas_imp" class="form-control form-control-sm text-center" disabled="">
+									<input type="hidden" id="tot_aulas" name="tot_aulas">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12 text-center">
+					<table id="tb_carga_horaria" class="table table-sm table-bordered" style="width:800px">
+						<thead class="small bg-info text-light" style="opacity: 0.75">
+							<tr>
+								<th colspan="8" class="text-center py-1">INFORMAÇÕES DE DEVOLUÇÃO</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="small bg-info text-light" style="opacity: 0.50">
+								<td class="text-center">Matricula</td>
+								<td class="text-center">Nome</td>
+								<td class="text-center">Total Devolvido</td>
+								<td class="text-center">Acões</td>
+							</tr>
+							<tbody>
+								<tr>
+									<td align="center">
+										<input type="text" name="txtMat_1" id="txtMat" class="form-control form-control-sm text-center" size="1" disabled="">
+									</td>
+									<td align="center" style="padding: 3px;">
+										<input type="text" name="txtNome_1" id="txtMat" class="form-control form-control-sm text-center" size="1" disabled="">
+									</td>
+									<td align="center">
+										<input type="text" name="txtTotDev" id="txtTotDev" class="form-control form-control-sm text-center" size="1">
+									</td>
+									<td class="text-center border-left px-0">
+										<button class="btn btn-sm btn-success" onclick="redirect('')">
+											<span class="ion-edit"></span>
+										</button>
+										<button class="btn btn-sm btn-primary" onclick="redirect('')">
+											<span class="ion-printer"></span>
+										</button>
+										<button class="btn btn-sm btn-danger" onclick="redirect('')">
+											<span class="ion-close"></span>
+										</button>
+									</td>
+								</tr>
+							</tbody>
+							<tr>
+								<td colspan="10" align="center">
+									<label class="text-muted mb-1"><small>Total de Devolução</small></label>
+									<input type="text" id="tot_aulas_imp" name="tot_aulas_imp" class="form-control form-control-sm text-center" disabled="">
+									<input type="hidden" id="tot_aulas" name="tot_aulas">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+		</div>
+	</div>
+
+	<script src="script/jquery/jquery-1.11.2.min.js"></script>
+	<script src="script/jquery.mask/jquery.mask.min.js"></script>
+	<!--<script src="js/cep.js"></script>-->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="script/jquery/ext/jquery.validate.min.js"></script>
+	<script src="script/jquery/ext/additional-methods.min.js"></script>
+	<script src="js/valida_jquery.js"></script>
+	<script type="text/javascript">
+	</script>
+</form>
+</body>
+</html>
+
